@@ -26,3 +26,12 @@ Mood_Level.hasMany(Mood, {
 Mood.belongsTo(Mood_Level, {
     foreignKey: 'moodLevelID',
 });
+
+// between Comment and User
+User.hasMany(Comment, {
+    foreignKey: 'userID',
+});
+
+Comment.belongsTo(User, {
+    foreignKey: 'userID',
+});
