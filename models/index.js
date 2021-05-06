@@ -63,3 +63,14 @@ Media.belongsTo(Comment, {
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
 });
+
+// between Login and User
+User.hasMany(Login, {
+    foreignKey: 'userID',
+});
+
+Login.belongsTo(User, {
+    foreignKey: 'userID',
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+});
