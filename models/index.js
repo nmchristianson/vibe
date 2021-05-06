@@ -52,3 +52,14 @@ Comment.belongsTo(Question, {
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
 });
+
+// between Comment and Media
+Comment.hasMany(Media, {
+    foreignKey: 'mediaID',
+});
+
+Media.belongsTo(Comment, {
+    foreignKey: 'mediaID',
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+});
