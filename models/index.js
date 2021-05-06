@@ -74,3 +74,23 @@ Login.belongsTo(User, {
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
 });
+
+// between Log and User
+User.hasMany(Log, {
+    foreignKey: 'userID',
+});
+
+Log.belongsTo(User, {
+    foreignKey: 'userID',
+});
+
+module.exports = {
+    User,
+    Mood_Level,
+    Mood,
+    Comment,
+    Login,
+    Log,
+    Question,
+    Media
+};
