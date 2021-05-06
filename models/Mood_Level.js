@@ -29,3 +29,5 @@ Mood_Level.init(
         modelName: 'mood_level'
     }
 );
+
+module.exports = Mood_Level;
