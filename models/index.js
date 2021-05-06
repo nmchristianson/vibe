@@ -16,6 +16,8 @@ User.hasMany(Mood, {
 
 Mood.belongsTo(User, {
     foreignKey: 'userID',
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
 });
 
 // between Mood and Mood_Level
@@ -25,6 +27,8 @@ Mood_Level.hasMany(Mood, {
 
 Mood.belongsTo(Mood_Level, {
     foreignKey: 'moodLevelID',
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
 });
 
 // between Comment and User
@@ -34,4 +38,17 @@ User.hasMany(Comment, {
 
 Comment.belongsTo(User, {
     foreignKey: 'userID',
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+});
+
+// between Comment and Question
+Question.hasMany(Comment, {
+    foreignKey: 'questionID',
+});
+
+Comment.belongsTo(Question, {
+    foreignKey: 'questionID',
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
 });
