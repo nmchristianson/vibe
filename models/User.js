@@ -22,6 +22,7 @@ User.init(
         },
         avatar: {
             type: DataTypes.LONGBLOB,
+            allowNull: true
         },
         timeZone: {
             type: DataTypes.STRING,
