@@ -5,7 +5,7 @@ class Moods extends Model {}
 
 Moods.init(
     {
-        moodLevelID: {
+        moodsID: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -15,12 +15,11 @@ Moods.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        value: {
-            type: DataTypes.INTEGER,
+        color: {
+            type: DataTypes.STRING,
             allowNull: false,
             unique: true
         }
-
     },
     {
         sequelize,

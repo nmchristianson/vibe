@@ -1,25 +1,19 @@
-const {Model, DataTypes} = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Mood extends Model {}
+class Journal extends Model { }
 
-Mood.init(
+Journal.init(
     {
-        moodID: {
+        journalID: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        moodLevelID: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            onDelete: 'CASCADE',
-            onUpdate: 'CASCADE',
-            references: {
-                model: 'mood_level',
-                key: 'moodLevelID'
-            }
+        journalNote: {
+            type: DataTypes.STRING,
+            allowNull: true,
         },
         userID: {
             type: DataTypes.INTEGER,
@@ -31,6 +25,23 @@ Mood.init(
                 key: 'userID'
             }
         },
+        photoUrl: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                isURL: true,
+            }
+        },
+        moodsID: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            onDelete: 'CASCADE',
+            onUpdate: 'CASCADE',
+            references: {
+                model: 'moods',
+                key: 'moodsID'
+            }
+        },
         delFlag: {
             type: DataTypes.BOOLEAN
         }
@@ -39,8 +50,8 @@ Mood.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'mood'
+        modelName: 'journal'
     }
 );
 
-module.exports = Mood;
+module.exports = Journal;
