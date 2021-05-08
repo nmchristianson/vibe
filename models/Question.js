@@ -23,7 +23,6 @@ Question.init(
     {
         sequelize,
         freezeTableName: true,
-        underscored: true,
         modelName: 'question'
     }
 );

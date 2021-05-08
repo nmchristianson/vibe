@@ -28,7 +28,6 @@ Mood.init(
     {
         sequelize,
         freezeTableName: true,
-        underscored: true,
         modelName: 'mood'
     }
 );
