@@ -1,11 +1,11 @@
 const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Moods extends Model {}
+class Mood extends Model {}
 
-Moods.init(
+Mood.init(
     {
-        moodsID: {
+        moodID: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -25,8 +25,8 @@ Moods.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'moods'
+        modelName: 'mood'
     }
 );
 
-module.exports = Moods;
+module.exports = Mood;

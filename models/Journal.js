@@ -32,14 +32,14 @@ Journal.init(
                 isURL: true,
             }
         },
-        moodsID: {
+        moodID: {
             type: DataTypes.INTEGER,
             allowNull: true,
             onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
             references: {
-                model: 'moods',
-                key: 'moodsID'
+                model: 'mood',
+                key: 'moodID'
             }
         },
         delFlag: {

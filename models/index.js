@@ -1,21 +1,18 @@
 const User = require('./User');
-const Mood_Level = require('./Mood_Level');
 const Mood = require('./Mood');
-const Comment = require('./Comment');
+const Journal = require('./Journal');
 const Question = require('./Question');
-const Media = require('./Media');
-const Log = require('./Log');
-const Login = require('./Login');
+const Answer = require('./Answer');
 
 // create associations
 
-// between User and Mood
-User.hasMany(Mood, {
-    foreignKey: 'userID',
+// between Journal and Mood
+Mood.hasMany(Journal, {
+    foreignKey: 'moodID',
 });
 
-Mood.belongsTo(User, {
-    foreignKey: 'userID',
+Journal.belongsTo(Mood, {
+    foreignKey: 'moodID',
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
 });
