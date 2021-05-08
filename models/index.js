@@ -28,55 +28,21 @@ Journal.belongsTo(User, {
     onUpdate: 'CASCADE',
 });
 
-// between Comment and Question
-Question.hasMany(Comment, {
+// between Answer and Question
+Question.hasMany(Answer, {
     foreignKey: 'questionID',
 });
 
-Comment.belongsTo(Question, {
+Answer.belongsTo(Question, {
     foreignKey: 'questionID',
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
-});
-
-// between Comment and Media
-Comment.hasMany(Media, {
-    foreignKey: 'mediaID',
-});
-
-Media.belongsTo(Comment, {
-    foreignKey: 'mediaID',
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
-});
-
-// between Login and User
-User.hasMany(Login, {
-    foreignKey: 'userID',
-});
-
-Login.belongsTo(User, {
-    foreignKey: 'userID',
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
-});
-
-// between Log and User
-User.hasMany(Log, {
-    foreignKey: 'userID',
-});
-
-Log.belongsTo(User, {
-    foreignKey: 'userID',
 });
 
 module.exports = {
     User,
-    Mood_Level,
     Mood,
-    Comment,
-    Login,
-    Log,
+    Journal,
     Question,
-    Media
+    Answer
 };
