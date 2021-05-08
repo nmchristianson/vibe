@@ -17,23 +17,12 @@ Journal.belongsTo(Mood, {
     onUpdate: 'CASCADE',
 });
 
-// between Mood and Mood_Level
-Mood_Level.hasMany(Mood, {
-    foreignKey: 'moodLevelID',
-});
-
-Mood.belongsTo(Mood_Level, {
-    foreignKey: 'moodLevelID',
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
-});
-
-// between Comment and User
-User.hasMany(Comment, {
+// between Journal and User
+User.hasMany(Journal, {
     foreignKey: 'userID',
 });
 
-Comment.belongsTo(User, {
+Journal.belongsTo(User, {
     foreignKey: 'userID',
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
