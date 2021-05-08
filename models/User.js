@@ -20,17 +20,6 @@ User.init(
             allowNull: false,
             unique: true,
         },
-        avatar: {
-            type: DataTypes.LONGBLOB,
-            allowNull: true
-        },
-        timeZone: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        favoriteColor: {
-            type: DataTypes.STRING
-        },
         delFlag: {
             type: DataTypes.BOOLEAN
         }
