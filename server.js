@@ -1,6 +1,6 @@
 const express = require('express');
 const sequelize = require('./config/connection');
-
+require("dotenv").config();
 // session dependencies
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
