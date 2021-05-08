@@ -15,6 +15,10 @@ Question.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        delFlag: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+        }
     },
     {
         sequelize,

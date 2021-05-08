@@ -21,7 +21,8 @@ User.init(
             unique: true,
         },
         delFlag: {
-            type: DataTypes.BOOLEAN
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
         }
     },
     {

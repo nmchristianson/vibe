@@ -1,7 +1,7 @@
-const {Model, DataTypes} = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Mood extends Model {}
+class Mood extends Model { }
 
 Mood.init(
     {
@@ -19,6 +19,10 @@ Mood.init(
             type: DataTypes.STRING,
             allowNull: false,
             unique: true
+        },
+        delFlag: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
         }
     },
     {

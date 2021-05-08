@@ -34,6 +34,10 @@ Answer.init(
                 model: 'user',
                 key: 'userID'
             }
+        },
+        delFlag: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
         }
     },
     {

@@ -43,7 +43,8 @@ Journal.init(
             }
         },
         delFlag: {
-            type: DataTypes.BOOLEAN
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
         }
     },
     {
