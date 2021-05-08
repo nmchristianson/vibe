@@ -39,6 +39,17 @@ Answer.belongsTo(Question, {
     onUpdate: 'CASCADE',
 });
 
+// between User and Answer
+User.hasMany(Answer, {
+    foreignKey: 'userID',
+});
+
+Answer.belongsTo(User, {
+    foreignKey: 'userID',
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+});
+
 module.exports = {
     User,
     Mood,
