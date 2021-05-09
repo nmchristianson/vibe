@@ -12,7 +12,7 @@ Answer.init(
             autoIncrement: true
         },
         answerText: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(5000),
             allowNull: true,
         },
         questionID: {

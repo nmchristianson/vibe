@@ -12,7 +12,7 @@ Journal.init(
             autoIncrement: true
         },
         journalNote: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(5000),
             allowNull: true,
         },
         userID: {
@@ -28,9 +28,6 @@ Journal.init(
         photoUrl: {
             type: DataTypes.STRING,
             allowNull: true,
-            validate: {
-                isURL: true,
-            }
         },
         moodID: {
             type: DataTypes.INTEGER,
