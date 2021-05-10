@@ -60,11 +60,11 @@ const renderCalendar = () => {
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      //  == Populates calnder with todays date == //
+      //  == Populates calender with todays date == //
       days += `<div class="today">${i}</div>`;
-      console.log(new Date().getDate());
+      console.log(Math.floor(Date.now() / 1000));
     } else {
-      // == Populates Calendar With Dates == // ===> // need to find a way to give unique timestamp to each div, append to database, and be able to call
+      // == Populates Calendar With Dates == //
       days += `<div>${i}</div>`;
     }
   }
@@ -89,3 +89,4 @@ document.querySelector(".next").addEventListener("click", () => {
 });
 
 renderCalendar();
+console.log(new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate());
