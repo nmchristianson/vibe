@@ -4,7 +4,11 @@ const { beforeCreate, beforeUpdate } = require('./Mood');
 const bcrypt = require('bcrypt');
 
 // create user model
-class User extends Model {}
+class User extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+    }
+}
 
 // define table columns and configuration
 User.init(
