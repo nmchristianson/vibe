@@ -42,13 +42,16 @@ const renderCalendar = () => {
     "December",
   ];
 
+  // == Sets month of calender == //
   document.querySelector(".date h1").innerHTML = months[date.getMonth()];
 
+  // == sets current date on calender == //
   document.querySelector(".date p").innerHTML = new Date().toDateString();
 
   let days = "";
 
   for (let x = firstDayIndex; x > 0; x--) {
+    // == Populates Calendar with previous months dates == //
     days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
   }
 
@@ -57,23 +60,29 @@ const renderCalendar = () => {
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
+      //  == Populates calnder with todays date == //
       days += `<div class="today">${i}</div>`;
+      console.log(new Date().getDate());
     } else {
+      // == Populates Calendar With Dates == // ===> // need to find a way to give unique timestamp to each div, append to database, and be able to call
       days += `<div>${i}</div>`;
     }
   }
 
   for (let j = 1; j <= nextDays; j++) {
+    //  == populates calender with next months dates == //
     days += `<div class="next-date">${j}</div>`;
     monthDays.innerHTML = days;
   }
 };
 
+// == cycle to previous month == //
 document.querySelector(".prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
   renderCalendar();
 });
 
+// == cycle to next month == //
 document.querySelector(".next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
   renderCalendar();
