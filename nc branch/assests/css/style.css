@@ -1,5 +1,5 @@
 body {
-    background-color: #000;(or image) 
+    background-color: #000; 
     background-repeat: repeat;
     background-size:contain;
     font-family: 'Raleway', sans-serif;
@@ -9,9 +9,9 @@ body {
       font-size: 7px;
       text-align: right;
       padding-top: 90px;
-      padding-right: 20px
+      padding-right: 20px;
       position: relative;
-      color: rgb(255, 255, 255);
+      color: #ffffff;
     }
   
     .container {
@@ -30,7 +30,20 @@ body {
       padding: 10px;
       border: 10px;
     }
-  
+    a.nav-link {
+        text-decoration: none;
+        padding:0.3em 1.2em;
+        border:0.16em solid #cccccc;
+        border-radius:2px;
+        color:#FFFFFF;
+        text-align:center;
+        transition: all 0.2s;
+        background-color:#999999
+    }
+    
+    a.nav-link:hover{
+        border-color: #999999;
+    }
     .mood-bar {
       background-color: #666666;
       border: 3px solid #ffffff;
